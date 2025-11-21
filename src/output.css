@@ -222,17 +222,8 @@
   .h-full {
     height: 100%;
   }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
-  }
   .w-\[150px\] {
     width: 150px;
-  }
-  .w-\[500\] {
-    width: 500;
-  }
-  .w-\[500px\] {
-    width: 500px;
   }
   .w-fit {
     width: fit-content;
@@ -252,6 +243,9 @@
   .list-none {
     list-style-type: none;
   }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -267,18 +261,8 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-8 {
-    gap: calc(var(--spacing) * 8);
-  }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
-  }
-  .space-x-4 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
-    }
   }
   .space-x-6 {
     :where(& > :not(:last-child)) {
@@ -297,23 +281,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
   .border-4 {
     border-style: var(--tw-border-style);
     border-width: 4px;
-  }
-  .border-8 {
-    border-style: var(--tw-border-style);
-    border-width: 8px;
-  }
-  .border-black {
-    border-color: var(--color-black);
-  }
-  .border-blue-50 {
-    border-color: var(--color-blue-50);
   }
   .border-blue-500 {
     border-color: var(--color-blue-500);
@@ -327,11 +297,8 @@
   .object-cover {
     object-fit: cover;
   }
-  .p-0 {
-    padding: calc(var(--spacing) * 0);
-  }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -398,6 +365,36 @@
       @media (hover: hover) {
         background-color: var(--color-blue-600);
       }
+    }
+  }
+  .sm\:grid-cols-3 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .sm\:gap-6 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 6);
+    }
+  }
+  .sm\:p-6 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:gap-10 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:p-10 {
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing) * 10);
     }
   }
 }
